@@ -1,6 +1,5 @@
 # 样式美化
 
-
 ## 主题目录(必看)
 
 ::: tip 说明
@@ -22,7 +21,6 @@
 
 然后在 `theme` 目录下新建 `index.ts` 并填入如下代码
 
-
 ```ts
 import DefaultTheme from 'vitepress/theme'
 
@@ -32,11 +30,7 @@ export default {
 }
 ```
 
-
-
-
 ## 主题美化
-
 
 ### 主题色
 
@@ -55,18 +49,16 @@ export default {
 └─ node_modules
 ```
 
-
 分别复制代码并粘贴
 
 ::: code-group
 
-```css [index.css]
+```css
 /* index.css */
 @import './var.css';
 ```
 
-
-```css [var.css]
+```css
 /* var.css */
 :root {
   --vp-c-brand-1: #18794e;
@@ -104,12 +96,10 @@ export default {
   --vp-button-brand-active-border: #F6CEEC;
 } */
 ```
+
 :::
 
-
-
 然后将修改好的样式引入 `index.ts`
-
 
 ```ts{3}
 /* .vitepress/theme/index.ts */
@@ -121,10 +111,7 @@ export default {
 }
 ```
 
-
 ---
-
-
 
 ### H1标题颜色
 
@@ -136,7 +123,7 @@ export default {
 
 ```css
 /* .vitepress/theme/style/var.css */
-h1 {
+.VPDoc h1 {
   color: red;
 }
 ```
@@ -145,7 +132,7 @@ h1 {
 
 ```css
 /* .vitepress/theme/style/var.css */
-h1 {
+.VPDoc h1 {
   background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -161,11 +148,7 @@ background-clip: 使文本的背景颜色与渐变效果相同
 text-fill-color：将文字透明
 :::
 
-
-
-
 ---
-
 
 ### 链接下划线
 
@@ -182,10 +165,6 @@ text-fill-color：将文字透明
 
 [参考：MDN Web Docs 社区](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration)
 
-
-
-
-
 ## 其他美化
 
 太多了，可以参照源文件来进行修改
@@ -194,10 +173,7 @@ text-fill-color：将文字透明
 node_modules\vitepress\dist\client\theme-default\styles\var.css
 ```
 
-
-
 ---
-
 
 ### 彩虹背景动画
 
@@ -220,10 +196,9 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 
 复制下面代码，粘贴到 `rainbow.css` 中
 
-
 ::: details 点我查看代码
 
-```css [rainbow.css]
+```css
 /* 彩虹动画 */
 @keyframes rainbow {
     0% {
@@ -671,16 +646,16 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
     --vp-home-hero-image-filter: '';
 }
 ```
-:::
 
+:::
 
 然后在 `index.css` 中引入生效，回到主页看效果
 
 ::: details 为什么我的没效果？
-- 自身问题：请仔细检查代码颜色色卡，是否正确配置
 
+- 自身问题：请仔细检查代码颜色色卡，是否正确配置
 - 电脑问题：我的电脑 - 右键 `属性` - `高级系统设置` - 在系统属性页卡中 `高级` - 性能 `设置`，默认为 调整为最佳外观，将 `窗口内的动画控件和元素` 打勾，确定（如果电脑字体变化，请调整为其他，只要确保勾选此项即可）
-:::
+  :::
 
 ```css
 /* .vitepress/theme/style/index.css */
@@ -688,7 +663,6 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 ```
 
 ---
-
 
 ### 引用颜色
 
@@ -714,7 +688,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 ::: code-group
 
 ```css
-/* .vitepress\theme\style\blockquote.css */
+/* .vitepress/theme/style/blockquote.css */
 .vp-doc blockquote {
     border-radius: 10px;
     padding: 18px 20px 20px 15px;
@@ -723,8 +697,8 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
     border-left: 6px solid var(--vp-c-green-2);
 }
 ```
-:::
 
+:::
 
 然后在 `index.css` 中引入生效
 
@@ -732,8 +706,6 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 /* .vitepress/theme/style/index.css */
 @import './blockquote.css';
 ```
-
-
 
 输入：
 
@@ -745,18 +717,13 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 
 > 更新时间：2024年
 
-
-
-
 ---
-
 
 ### 容器颜色
 
 随着版本更新迭代，现在这 `tip` `warning` `danger` 颜色真的想吐槽，好丑！
 
 [Vuepress/hope主题的容器颜色](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/hint.html#%E6%BC%94%E7%A4%BA) 就不错，参考着弄一下
-
 
 在 `theme/style` 新建 `custom-block.css` 文件
 
@@ -777,7 +744,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 
 ::: code-group
 
-```css [custom-block.css]
+```css
 /* .vitepress/theme/style/custom-block.css */
 /* 深浅色卡 */
 :root {
@@ -972,10 +939,10 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
     top: -1px;
 }
 ```
+
 :::
 
-
-看看效果
+看看效果，如果想更花里胡哨的， [流体边框类似跑马灯的效果](./style-fluidborder.md)
 
 ::: info 注释
 注释是灰色
@@ -985,7 +952,6 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 提示是绿色
 :::
 
-
 ::: warning 警告
 警告是橘色
 :::
@@ -994,426 +960,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 危险是红色
 :::
 
-如果想更花里胡哨的，可以加一个流体边框，类似跑马灯的效果
-
-::: details 点我查看代码，感谢 [@Aurorxa](https://github.com/Aurorxa) 提供
-
-```css [custom-block.css (复制，粘贴，覆盖原先的代码保存)]
-/* .vitepress/theme/style/custom-block.css */
-/* 深浅色卡 */
-:root {
-  --custom-block-info-left: #cccccc;
-  --custom-block-info-bg: #fafafa;
-
-  --custom-block-tip-left: #009400;
-  --custom-block-tip-bg: #e6f6e6;
-
-  --custom-block-warning-left: #e6a700;
-  --custom-block-warning-bg: #fff8e6;
-
-  --custom-block-danger-left: #e13238;
-  --custom-block-danger-bg: #ffebec;
-
-  --custom-block-note-left: #4cb3d4;
-  --custom-block-note-bg: #eef9fd;
-
-  --custom-block-important-left: #a371f7;
-  --custom-block-important-bg: #f4eefe;
-
-  --custom-block-caution-left: #e0575b;
-  --custom-block-caution-bg: #fde4e8;
-}
-
-.dark {
-  --custom-block-info-left: #cccccc;
-  --custom-block-info-bg: #474748;
-
-  --custom-block-tip-left: #009400;
-  --custom-block-tip-bg: #003100;
-
-  --custom-block-warning-left: #e6a700;
-  --custom-block-warning-bg: #4d3800;
-
-  --custom-block-danger-left: #e13238;
-  --custom-block-danger-bg: #4b1113;
-
-  --custom-block-note-left: #4cb3d4;
-  --custom-block-note-bg: #193c47;
-
-  --custom-block-important-left: #a371f7;
-  --custom-block-important-bg: #230555;
-
-  --custom-block-caution-left: #e0575b;
-  --custom-block-caution-bg: #391c22;
-}
-
-
-/* 标题字体大小 */
-.custom-block-title {
-  font-size: 16px;
-}
-
-/* info容器:背景色、流体边框 */
-.custom-block.info {
-  border-left: none;
-  background-color: var(--custom-block-info-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* info容器:svg图 */
-.custom-block.info [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z' fill='%23ccc'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -1px;
-}
-
-/* info容器:流体边框 */
-.custom-block.info::before,
-.custom-block.info::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-info-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* info容器:流体边框动画 */
-.custom-block.info::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-/* TIP容器::背景色、流体边框 */
-.custom-block.tip {
-  border-left: none;
-  background-color: var(--custom-block-tip-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* TIP容器:svg图 */
-.custom-block.tip [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23009400' d='M7.941 18c-.297-1.273-1.637-2.314-2.187-3a8 8 0 1 1 12.49.002c-.55.685-1.888 1.726-2.185 2.998H7.94zM16 20v1a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-1h8zm-3-9.995V6l-4.5 6.005H11v4l4.5-6H13z'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -2px;
-}
-
-/* TIP容器:流体边框 */
-.custom-block.tip::before,
-.custom-block.tip::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-tip-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* TIP容器:流体边框动画 */
-.custom-block.tip::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-/* WARNING:背景色、流体边框 */
-.custom-block.warning {
-  border-left: none;
-  background-color: var(--custom-block-warning-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* WARNING:svg图 */
-.custom-block.warning [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M576.286 752.57v-95.425q0-7.031-4.771-11.802t-11.3-4.772h-96.43q-6.528 0-11.3 4.772t-4.77 11.802v95.424q0 7.031 4.77 11.803t11.3 4.77h96.43q6.528 0 11.3-4.77t4.77-11.803zm-1.005-187.836 9.04-230.524q0-6.027-5.022-9.543-6.529-5.524-12.053-5.524H456.754q-5.524 0-12.053 5.524-5.022 3.516-5.022 10.547l8.538 229.52q0 5.023 5.022 8.287t12.053 3.265h92.913q7.032 0 11.803-3.265t5.273-8.287zM568.25 95.65l385.714 707.142q17.578 31.641-1.004 63.282-8.538 14.564-23.354 23.102t-31.892 8.538H126.286q-17.076 0-31.892-8.538T71.04 866.074q-18.582-31.641-1.004-63.282L455.75 95.65q8.538-15.57 23.605-24.61T512 62t32.645 9.04 23.605 24.61z' fill='%23e6a700'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-}
-
-/* WARNING容器:流体边框 */
-.custom-block.warning::before,
-.custom-block.warning::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-warning-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* WARNING容器:流体边框动画 */
-.custom-block.warning::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-/* DANGER容器:背景色、流体边框 */
-.custom-block.danger {
-  border-left: none;
-  background-color: var(--custom-block-danger-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* DANGER容器:svg图 */
-.custom-block.danger [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10v3.764a2 2 0 0 1-1.106 1.789L18 19v1a3 3 0 0 1-2.824 2.995L14.95 23a2.5 2.5 0 0 0 .044-.33L15 22.5V22a2 2 0 0 0-1.85-1.995L13 20h-2a2 2 0 0 0-1.995 1.85L9 22v.5c0 .171.017.339.05.5H9a3 3 0 0 1-3-3v-1l-2.894-1.447A2 2 0 0 1 2 15.763V12C2 6.477 6.477 2 12 2zm-4 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z' fill='%23e13238'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -1px;
-}
-
-
-/* DANGER容器:流体边框 */
-.custom-block.danger::before,
-.custom-block.danger::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-danger-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* DANGER容器:流体边框动画 */
-.custom-block.danger::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-
-
-
-
-/* GitHub风格警告 */
-
-
-
-/* NOTE容器:背景色、流体边框 */
-.custom-block.note {
-  border-left: none;
-  background-color: var(--custom-block-note-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* NOTE容器:svg图 */
-.custom-block.note [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z' fill='%234cb3d4'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -1px;
-}
-
-/* NOTE容器:流体边框 */
-.custom-block.note.github-alert::before,
-.custom-block.note.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-note-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* NOTE容器:流体边框动画 */
-.custom-block.note.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-/* IMPORTANT容器:背景色、流体边框 */
-.custom-block.important {
-  border-left: none;
-  background-color: var(--custom-block-important-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* IMPORTANT容器:svg图 */
-.custom-block.important [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M512 981.333a84.992 84.992 0 0 1-84.907-84.906h169.814A84.992 84.992 0 0 1 512 981.333zm384-128H128v-42.666l85.333-85.334v-256A298.325 298.325 0 0 1 448 177.92V128a64 64 0 0 1 128 0v49.92a298.325 298.325 0 0 1 234.667 291.413v256L896 810.667v42.666zm-426.667-256v85.334h85.334v-85.334h-85.334zm0-256V512h85.334V341.333h-85.334z' fill='%23a371f7'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -1px;
-}
-
-
-/* IMPORTANT容器:流体边框 */
-.custom-block.important.github-alert::before,
-.custom-block.important.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-important-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* IMPORTANT容器:流体边框动画 */
-.custom-block.important.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-
-/* CAUTION容器:背景色、流体边框 */
-.custom-block.caution {
-  border-left: none;
-  background-color: var(--custom-block-caution-bg);
-  position: relative;
-  transition: all .3s;
-}
-
-/* CAUTION容器:svg图 */
-.custom-block.caution [class*="custom-block-title"]::before {
-  content: '';
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10v3.764a2 2 0 0 1-1.106 1.789L18 19v1a3 3 0 0 1-2.824 2.995L14.95 23a2.5 2.5 0 0 0 .044-.33L15 22.5V22a2 2 0 0 0-1.85-1.995L13 20h-2a2 2 0 0 0-1.995 1.85L9 22v.5c0 .171.017.339.05.5H9a3 3 0 0 1-3-3v-1l-2.894-1.447A2 2 0 0 1 2 15.763V12C2 6.477 6.477 2 12 2zm-4 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z' fill='%23e13238'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 4px;
-  left: -5px;
-  top: -1px;
-}
-
-/* CAUTION容器:流体边框 */
-.custom-block.caution.github-alert::before,
-.custom-block.caution.github-alert::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid var(--custom-block-caution-left);
-  transition: all .5s;
-  animation: clippath 6s infinite linear;
-  border-radius: 10px;
-}
-
-/* CAUTION容器:流体边框动画 */
-.custom-block.caution.github-alert::after {
-  animation: clippath 6s infinite -3s linear;
-}
-
-
-
-/* 流光边框 - 跑马灯 */
-
-@keyframes clippath {
-
-  0%,
-  100% {
-    clip-path: inset(0 0 90% 0);
-  }
-
-  25% {
-    clip-path: inset(0 90% 0 0);
-  }
-
-  50% {
-    clip-path: inset(90% 0 0 0);
-  }
-
-  75% {
-    clip-path: inset(0 0 0 90%);
-  }
-}
-
-```
-:::
-
-我们来看看效果
-
-::: details 为什么我的没效果？
-- 自身问题：请仔细检查代码颜色色卡，是否正确配置
-
-- 电脑问题：我的电脑 - 右键 `属性` - `高级系统设置` - 在系统属性页卡中 `高级` - 性能 `设置`，默认为 调整为最佳外观，将 `窗口内的动画控件和元素` 打勾，确定（如果电脑字体变化，请调整为其他，只要确保勾选此项即可）
-:::
-
-<fluidborder />
-
-
 ---
-
 
 ### 导航栏毛玻璃
 
@@ -1437,7 +984,8 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 复制下面代码，粘贴到 `blur.css` 中，可以自行增减
 
 ::: code-group
-```css [blur.css]
+
+```css
 /* .vitepress\theme\style\blur.css */
 :root {
 
@@ -1483,8 +1031,8 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 
 }
 ```
-:::
 
+:::
 
 最后引入 `index.css` 中 即可看到效果
 
@@ -1493,10 +1041,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 @import './blur.css';
 ```
 
-
 ---
-
-
 
 ### 隐藏横条
 
@@ -1520,7 +1065,8 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 复制下面代码，粘贴到 `hidden.css` 中，可以自行增减
 
 ::: code-group
-```css [hidden.css]
+
+```css
 /* .vitepress\theme\style\hidden.css */
 :root {
 
@@ -1564,6 +1110,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
     display: none;
 }
 ```
+
 :::
 
 最后引入 `index.css` 中 即可看到效果
@@ -1573,10 +1120,7 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 @import './hidden.css';
 ```
 
-
 ---
-
-
 
 ### 链接图标
 
@@ -1602,16 +1146,15 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 分别添加了 [油管](https://www.youtube.com/) 和 [B站](https://www.bilibili.com/) 的链接图标
 
 ::: tip SVG图形
+
 * 建议使用 `32*32` 的尺寸
 
 [iconfont](https://www.iconfont.cn/)、[xicons](https://www.xicons.org/#/zh-CN)、[iconpark](https://iconpark.oceanengine.com/official)
 :::
 
-
-
 ::: code-group
 
-```css{6,19} [link.css]
+```css{6,19}
 /* .vitepress/theme/style/link.css */
 
 /* YouTube */
@@ -1641,8 +1184,8 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
     margin-right: 4px;
 }
 ```
-:::
 
+:::
 
 然后在 `index.css` 中引入生效
 
@@ -1650,7 +1193,6 @@ node_modules\vitepress\dist\client\theme-default\styles\var.css
 /* .vitepress/theme/style/index.css */
 @import './link.css';
 ```
-
 
 输入：
 
@@ -1666,12 +1208,7 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
 B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
-
 ---
-
-
-
-
 
 ### 记号笔
 
@@ -1711,7 +1248,7 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
 ```css
 /* .vitepress/theme/style/index.css */
-@import './link.css';
+@import './marker.css';
 ```
 
 输入：
@@ -1722,7 +1259,7 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
 输出：
 
-<sapn class="marker-text">这里是重重点</sapn>
+`<sapn class="marker-text">`这里是重重点`</sapn>`
 
 还可以实现类似荧光笔的效果
 
@@ -1746,8 +1283,7 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
 输出：
 
-<sapn class="marker-text-highlight">这里是荧光笔</sapn>
-
+`<sapn class="marker-text-highlight">`这里是荧光笔`</sapn>`
 
 但是这些都不是我心仪的，最后在 [尤大的个人主页](https://evanyou.me/) 还有个 `hover`，真不错
 
@@ -1787,10 +1323,7 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 
 输出：
 
-<sapn class="marker-evy">这里是尤雨溪的主页样式，鼠标放在我上面看效果</sapn>
-
-
-
+`<sapn class="marker-evy">`这里是尤雨溪的主页样式，鼠标放在我上面看效果`</sapn>`
 
 ---
 
@@ -1799,7 +1332,6 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 将代码组改成Mac风格，三个小圆点
 
 在 `.vitepress/theme/style` 目录新建一个 `vp-code.css` 文件
-
 
 ```md{8}
 .
@@ -1821,7 +1353,8 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
 :::
 
 ::: code-group
-```css [vp-code.css]
+
+```css
 /* .vitepress/theme/style/vp-code.css */
 
 /* 代码块：增加留空边距 增加阴影 */
@@ -1865,8 +1398,8 @@ B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
   margin-bottom: 20px;
 }
 ```
-:::
 
+:::
 
 然后在 `index.css` 中引入生效
 
@@ -1901,18 +1434,13 @@ pnpm -v
 pnpm -v
 ```
 
-
-
 ---
-
-
 
 ### 代码组
 
 将代码组改成Mac风格，三个小圆点
 
 在 `.vitepress/theme/style` 目录新建一个 `vp-code-group.css` 文件
-
 
 ```md{8}
 .
@@ -1934,7 +1462,8 @@ pnpm -v
 :::
 
 ::: code-group
-```css [vp-code-group.css]
+
+```css
 /* .vitepress/theme/style/vp-code-group.css */
 
 /* 代码组：tab间距 */
@@ -2001,8 +1530,8 @@ pnpm -v
 }
 
 ```
-:::
 
+:::
 
 然后在 `index.css` 中引入生效
 
@@ -2029,37 +1558,31 @@ yarn -v
 :::
 ````
 
-
-
 输出：
 
 ::: code-group
 
-```sh [pnpm]
+```sh
 #查询pnpm版本
 pnpm -v
 ```
 
-```sh [yarn]
+```sh
 #查询yarn版本
 yarn -v
 ```
+
 :::
 
-
-
 ---
-
 
 ### 代码精简
 
 当我们的内容多了，在 `config.mts` 中配置导航和侧边栏，翻就要半天了
 
-
 所以那就来个简化导航栏，其他同理
 
 在 `.vitepress` 目录新建 `config` 文件夹，并新建 `index.ts` 文件
-
 
 ```md{5-6}
 .
@@ -2079,7 +1602,6 @@ yarn -v
 export * from './nav'
 ```
 
-
 然后再新建 `nav.ts` 文件
 
 ```md{7}
@@ -2087,7 +1609,7 @@ export * from './nav'
 ├─ docs
 │  ├─ .vitepress
 │  │  └─ config.mts
-│  │  └─ configs      
+│  │  └─ configs  
 │  │     └─ index.ts
 │  │     └─ nav.ts     <- 导航配置
 │  └─ index.md
@@ -2113,7 +1635,6 @@ export const nav: DefaultTheme.Config['nav'] = [
 ]
 ```
 
-
 最后我们回到 `config.mts` 中引入配置
 
 ```ts{3,8-9}
@@ -2130,8 +1651,6 @@ export default defineConfig({
 })
 ```
 
-
-
 ### 代码块带标题
 
 在 `.vitepress/theme/style` 目录新建一个 `vp-code-title.css` 文件
@@ -2139,7 +1658,6 @@ export default defineConfig({
 ::: warning 注意
 使用前，必须先[安装 代码组图标 插件](./plugin.md#代码组图标) 才可以生效
 :::
-
 
 ```md{8}
 .
@@ -2160,8 +1678,7 @@ export default defineConfig({
 本次代码感谢 [@Aurorxa](https://github.com/Aurorxa) 提供，本人在此基础上进行一些修改
 :::
 
-
-```css [vp-code-title.css]
+```css
 /* .vitepress/theme/style/vp-code-title.css */
 
 /* 整体容器样式（带阴影和圆角） */
@@ -2232,8 +1749,6 @@ export default defineConfig({
 }
 ```
 
-
-
 然后在 `index.css` 中引入生效
 
 ```css
@@ -2242,7 +1757,83 @@ export default defineConfig({
 ```
 
 
+### mermaid 
 
+安装依赖：
+
+```
+ npm i vitepress-plugin-mermaid -D
+```
+
+在 config.mts 中进行配置
+
+```ts
+import { withMermaid } from 'vitepress-plugin-mermaid'
+
+export const sharedConfig = withMermaid(defineConfig({
+  ...
+}))
+
+```
+
+在 markdown 中输入：
+
+```txt
+graph LR
+    A[Java 数据类型] --> B[原始数据类型]
+    A[Java 数据类型] --> C[引用数据类型]
+    
+    B --> D[整数类型]
+    B --> E[浮点类型]
+    B --> F[字符类型]
+    B --> G[布尔类型]
+    
+    D --> H[int]
+    D --> I[long]
+    D --> J[short]
+    D --> K[byte]
+    
+    E --> L[float]
+    E --> M[double]
+    
+    F --> N[char]
+    
+    G --> O[boolean]
+    
+    C --> P[类]
+    C --> Q[接口]
+    C --> R[数组]
+
+```
+
+结果：
+```mermaid
+graph LR
+    A[Java 数据类型] --> B[原始数据类型]
+    A[Java 数据类型] --> C[引用数据类型]
+    
+    B --> D[整数类型]
+    B --> E[浮点类型]
+    B --> F[字符类型]
+    B --> G[布尔类型]
+    
+    D --> H[int]
+    D --> I[long]
+    D --> J[short]
+    D --> K[byte]
+    
+    E --> L[float]
+    E --> M[double]
+    
+    F --> N[char]
+    
+    G --> O[boolean]
+    
+    C --> P[类]
+    C --> Q[接口]
+    C --> R[数组]
+
+```
 
 
 ## 徽章
@@ -2263,7 +1854,6 @@ https://forthebadge.com/
 https://badge.fury.io/
 :::
 
-
 ### 组成
 
 由三部分组成：标签、消息和颜色，其中标签可以不写，但消息和颜色必须存在！
@@ -2271,9 +1861,7 @@ https://badge.fury.io/
 格式：`label-message-color`(由左至右)
 
 * label：标签
-
 * message：消息
-
 * color：颜色
 
 ---
@@ -2300,9 +1888,7 @@ https://badge.fury.io/
 
 ![](https://img.shields.io/badge/any_text-you_like-blue)
 
-
 如果不写标签，只写消息和颜色的话，输入 `just_do_it-8A2BE2`
-
 
 生成链接：https://img.shields.io/badge/just_do_it-8A2BE2
 
@@ -2315,7 +1901,6 @@ https://badge.fury.io/
 输出：
 
 ![](https://img.shields.io/badge/just_do_it-8A2BE2)
-
 
 点击输入框下面的 `Show optional parameters` 展开更多详细信息
 
@@ -2333,7 +1918,6 @@ https://badge.fury.io/
 
 ![](https://img.shields.io/badge/just_do_it-blue?style=for-the-badge&logo=alipay&logoColor=1677FF&label=%E6%94%AF%E4%BB%98%E5%AE%9D&labelColor=lightgrey)
 
-
 静态徽章做跳转的话，可以直接使用markdown格式
 
 ```md
@@ -2343,11 +1927,9 @@ https://badge.fury.io/
 效果：
 [![](https://img.shields.io/badge/just_do_it-blue?style=for-the-badge&logo=alipay&logoColor=1677FF&label=%E6%94%AF%E4%BB%98%E5%AE%9D&labelColor=lightgrey)](https://shields.io/badges)
 
-
 ::: warning 关于其他动态徽章
 可以参照官网，挨个摸索并不难上手
 :::
-
 
 ---
 
@@ -2360,240 +1942,238 @@ https://github.com/Envoy-VC/awesome-badges
 :::
 
 ::: details 这里引用 [查尔斯](https://blog.charles7c.top/about/me) 的页面展示
+
 ```md
 #### 后端技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" /> 
 </p>
 
 #### 前端技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" /> 
 </p>
 
 #### DevOps
 
 <p>
-  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" /> 
 </p>
 
 #### 运维技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" /> 
 </p>
 
 #### 测试技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" /> 
 </p>
 
 #### 开发工具
 
 <p>
-  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" /> 
 </p>
 
 #### 其他
 
 <p>
-  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" /> 
 </p>
 ```
+
 :::
-
-
 
 效果：
 
 #### 后端技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" /> 
 </p>
 
 #### 前端技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" /> 
 </p>
 
 #### DevOps
 
 <p>
-  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" /> 
 </p>
 
 #### 运维技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" /> 
 </p>
 
 #### 测试技术栈
 
 <p>
-  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" /> 
 </p>
 
 #### 开发工具
 
 <p>
-  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" /> 
 </p>
 
 #### 其他
 
 <p>
-  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" /> 
+  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" /> 
 </p>
-
-
 
 ## Github美化
 

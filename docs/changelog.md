@@ -18,6 +18,33 @@ next: false
 > 
 > 不过版本更新，还是会跟着走的
 
+
+## 2025-2-12
+
+- 修复导航布局问题导致的样式污染 ([issues#45](https://github.com/Yiov/vitepress-doc/issues/45))
+
+- 更新 [todo插件](./plugin.md#todo) 最新用法 ([pull#46](https://github.com/Yiov/vitepress-doc/pull/46))
+
+- 分离 [容器流体边框教程](./style-fluidborder.md)
+
+- 修正 [代码块带标题行号偏移](./markdown.md#代码块带标题)
+
+
+## 2025-2-9
+
+- 更新 版本至v1.6.3
+
+::: tip 为什么不更新到alpha预发行版
+考虑到有比较多的新手友友，预发行版可能会有Bug，担心体验感降低，跟着正式版走吧
+:::
+
+- 更改h1标题样式仅对文档有效（修复首页下划线文字不显示）
+
+
+## 2025-2-8
+
+- 新增 [Docsearch使用](./docsearch.md)
+
 ## 2025-1-12
 
 
